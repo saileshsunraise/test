@@ -12,13 +12,11 @@ router.post("/create",  create);
 
 
 
-
   function get (req, res) {
     db.query(
       'SELECT id, name, date FROM event',
       (error, results) => {
         if (error) {
-          console.log(error);
           res.status(500).json({status: 'error'});
         } else {
             results.forEach(element => {
